@@ -1,7 +1,44 @@
 ---
 title: "Day 5 Session 1"
-format: html
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code!"
 editor: visual
+execute: 
+  echo: true
+  warning: false
 ---
 
-## 
+```{r}
+library(tidyverse)
+```
+
+## Explore starwars dataset
+
+-   Look at the first 6 lines of starwars
+
+-   Find the dimensions of starwars
+
+-   Make a histogram of character heights
+
+-   Make a scatterplot of height vs weight
+
+-   Stage, commit, push! Check & see changes are safely stored.
+
+```{r}
+head(starwars)
+
+dim(starwars)
+
+```
+
+```{r}
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass)) +
+  geom_point()
+```
